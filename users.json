@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "odeckmyn", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2010-03-17 10:15:27", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$05cb9$4ad0504e6ab4238b07e595cd8078da20b1334e87", 
+            "email": "olivier@deckmyn.org", 
+            "date_joined": "2010-03-17 10:15:27"
+        }
+    }
+]
