@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import unicodedata
+import re
+
+re_hash=re.compile('(#+\w*)')
     
 def strip_accents(s):
     s=unicode(s)
@@ -29,4 +32,6 @@ def find_hashes(s):
     >>> find_hashes('may be #SOMETHING #weIrD here too')
     [u'something',u'weird']
     """
-    string.find('')
+    l=re_hash.findall(s)
+    return [hashify(x[1:]) for x in l]
+    
