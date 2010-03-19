@@ -1,0 +1,4 @@
+#footer {text-align:center;padding-top:1em;padding-bottom:1em}
+#footer li{list-style:none;list-style-type: none;display:inline;color:#666;padding-right:1em;}
+#footer li a{color:#666;text-decoration:none;}
+#footer li a:hover{color:#666;text-decoration:underline;}

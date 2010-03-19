@@ -1,0 +1,55 @@
+{% load i18n %} 
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Twitranet - Serious Social Networks for the Entreprise 2.0" />
+	<meta name="keywords" content="twitranet serious social network" />
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="generator" content="Twitranet" />
+	<meta name="robots" content="index,follow" />
+	
+    
+    <title>{% block title %}{% endblock %} | {% block appname%}Application Name{% endblock %} | Twitranet</title>
+    
+    <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print"> 
+    <link rel="stylesheet" href="/static/css/twitranet.css" type="text/css"> 
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+    {%block extracss%}{%endblock%}
+    {%block extrajs%}{%endblock%}
+</head>
+
+<body>
+    {%block afterbodystart%}{%endblock%}  
+    <div class="container showgrid">          
+        <div id="header" class="span-24 ">
+            <h1>Twitranet</h1>
+            <hr>
+        </div>
+        <div id="leftcolumn" class="span-4 first">
+            <p>Left Column</p>
+        </div>
+        <div id="content" class="span-16">
+            {%block content%}{%endblock%}
+        </div>
+        <div id="rightcolumn" class="span-4 last">
+            <p>Right Column</p>
+        </div>
+        <div id="footer" class="span-24 prepend-top">
+            <li><a href="http://twitranet.com/" target="_blank">&copy;Twitranet 2010</a></li>
+            <li><a href="/about">About</a></li>
+        </div>
+    </div>
+    {%block beforebodyend%}{%endblock%}
+</body>
+</html>
