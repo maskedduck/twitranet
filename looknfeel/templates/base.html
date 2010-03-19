@@ -31,19 +31,22 @@
 
 <body>
     {%block afterbodystart%}{%endblock%}  
-    <div class="container showgrid">          
-        <div id="header" class="span-24 ">
-            <h1>Twitranet</h1>
-            <hr>
+    <div class="container">          
+        <div id="userbox" class="span-24 align-right quiet">
+            {%block userbox%}{%endblock%}
         </div>
+        <div id="header" class="span-24 ">
+            <h1><a href="/">Twitranet</a></h1>
+            <hr>
+        </div>         
         <div id="leftcolumn" class="span-4 first">
-            <p>Left Column</p>
+            {%block leftcolumn%}{%endblock%}
         </div>
         <div id="content" class="span-16">
             {%block content%}{%endblock%}
         </div>
         <div id="rightcolumn" class="span-4 last">
-            <p>Right Column</p>
+            {%block rightcolumn%}{%endblock%}
         </div>
         <div id="footer" class="span-24 prepend-top">
             <li><a href="http://twitranet.com/" target="_blank">&copy;Twitranet 2010</a></li>

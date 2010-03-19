@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import unicodedata
-import re
+import os, re
+from django.http import HttpResponse
+from django.template import RequestContext, add_to_builtins, loader, TemplateDoesNotExist
+from django.conf import settings
 
 re_hash=re.compile('(#+\w*)')
     
@@ -35,3 +38,28 @@ def find_hashes(s):
     l=re_hash.findall(s)
     return [hashify(x[1:]) for x in l]
     
+def base_url(noslash=True):
+    return "http://%s%s"%( os.environ['HTTP_HOST'], {False:'/', True:''}[noslash] )
+
+def render_to_string(request, template_name, data=None):
+    return loader.render_to_string(template_name, data,
+        context_instance=RequestContext(request))
+
+def render_to_response(request, template_name, data=None, mimetype=None):
+    if mimetype is None:
+        mimetype = settings.DEFAULT_CONTENT_TYPE
+    if mimetype == 'application/xhtml+xml':
+        # Internet Explorer only understands XHTML if it's served as text/html
+        if request.META.get('HTTP_ACCEPT').find(mimetype) == -1:
+            mimetype = 'text/html'
+        # Since XHTML is served with two different MIME types, depending on the
+        # browser, we need to tell proxies to serve different versions.
+        from django.utils.cache import patch_vary_headers
+        patch_vary_headers(response, ['User-Agent'])
+
+    return HttpResponse(render_to_string(request, template_name, data),
+        content_type='%s; charset=%s' % (mimetype, settings.DEFAULT_CHARSET))
+
+def TextResponse(string=''):
+    return HttpResponse(string,
+        content_type='text/plain; charset=%s' % settings.DEFAULT_CHARSET)

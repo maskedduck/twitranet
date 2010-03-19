@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %} 
 
-{% block appname%}L'Oreal{% endblock %}        
+{% block appname%}L'Oreal{% endblock %}
+{% block userbox%}
+    {% if user.is_authenticated %}
+        Welcome <a href="/">{{user.username}}</a> | <a href="{%url logout%}">logout</a>    {%else%}
+        <a href="{%url login%}">login</a>
+    {%endif%}
+{%endblock%}
+{% block rightcolumn%}Welcome{% endblock %}        
+
+
 
 {% block beforebodyend %} 
 {% if not debug%}

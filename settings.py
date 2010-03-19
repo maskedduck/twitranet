@@ -62,6 +62,14 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.load_template_source',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.debug',  # add 2 vars to context only when debug==True
+)                                         
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,4 +95,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',  
     
     'core',
+    'looknfeel',
 )

@@ -4,6 +4,11 @@
 {% block title %}{% blocktrans %}Homepage{% endblocktrans %}{% endblock %}
 
 {% block content %}
-<h1>Hello, World</h1>
-<p>Yes, hello</p>
+
+<form method="POST" action=".">
+    {{form.as_p}}
+</form>
+
 {% endblock %}
+<input type="text" class="text" id="message" name="message" value="Enter your message here...">
+<input type="submit" value="Tweet">
