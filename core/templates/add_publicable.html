@@ -1,0 +1,58 @@
+<div id="addform" class="tabs">
+    <ul>
+        <li><a href="#add-tweet"><img src="/static/icons/balloon.png" alt="add a tweet"/></a></li>
+        <li><a href="#add-imagelink"><img src="/static/icons/image-balloon.png" alt="add an image"/></a></li>
+        <li><a href="#add-videorecord"><img src="/static/icons/webcam.png" alt="add a video record"/></a></li>
+        <li><a href="#add-audiorecord"><img src="/static/icons/microphone.png" alt="add an audio record"/></a></li>
+    </ul>       
+    <div id="add-tweet">
+        <form method="POST" action=".">
+            <input type="hidden" name="contenttype" value="tweet"/>
+            {% if tweetform.0.errors %}
+                {{ tweetform.0.errors.0 }}
+            {% endif %}
+            {{tweetform.as_p}}
+            <input type="submit" value="Tweet">
+
+        </form>
+    </div>
+
+    <div id="add-imagelink">
+        <form method="POST" action=".">
+            <input type="hidden" name="contenttype" value="imagelink"/>
+            {% if imagelinkform.0.errors %}
+                {{ imagelinkform.0.errors.0 }}
+            {% endif %}
+            {{imagelinkform.as_p}}
+            <input type="submit" value="Link">
+        </form>
+    </div>
+
+    <div id="add-videorecord">
+    </div>
+
+    <div id="add-audiorecord">
+    </div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    var tabContainers = $('div.tabs > div');
+    tabContainers.hide().filter(':first').show();
+    
+    $('div.tabs > ul a').click(function () {
+        tabContainers.hide();
+        tabContainers.filter(this.hash).show();
+        $('div.tabs > ul li').removeClass('selected');
+        $(this).parent().addClass('selected');
+        return false;
+    }).filter(':first').click();
+
+    if (!$.browser.msie) {
+        $('div.tabs > ul li').corner("top 3px");
+        $('div.tabs > div').corner("right 4px");
+    }
+    
+});
+</script>

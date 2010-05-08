@@ -1,0 +1,14 @@
+Dev:
+- solve polymorphism issue
+- test cases
+- use compress mechanism
+- build html GUI
+- then make AJAX version
+- LDAP connector 
+                                  
+Cosmetic:
+- new filter to display time as "3 mins ago"
+
+
+Done:
+- POC

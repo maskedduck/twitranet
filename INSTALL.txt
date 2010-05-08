@@ -1,0 +1,23 @@
+Here is the document to install Twitranet from a fresh Debian/Ubuntu (virtual) machine.
+
+Documentation is built from Ubuntu Server 8.04 LTS
+
+First login, using 'user' login, created by installation
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install ssh
+sudo reboot
+
+Now connect to your machine with SSH
+check Python2.5 is installed
+                                
+sudo adduser --system twitranet
+
+apt-get install bash-completion build-essential 
+
+apt-get install python2.5
+installation django 1.1 ou 1.2 "à la main"
+apt-get install memcached
+apt-get install dot (enfin, graphviz, quoi)

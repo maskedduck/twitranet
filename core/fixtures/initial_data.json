@@ -1,0 +1,84 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin",
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2010-03-17 10:15:27", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$9f34c$e37f1d9bf4e4970c89401438c14eda6fc8b5f30d", 
+            "email": "cequi.chlorraine@gmail.com", 
+            "date_joined": "2010-03-17 10:15:27"
+        }
+    },
+    {
+        "pk": 2, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "mickael",
+            "first_name": "Mickael", 
+            "last_name": "Jackson", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2010-03-17 10:15:27", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$9f34c$e37f1d9bf4e4970c89401438c14eda6fc8b5f30d", 
+            "email": "cequi.chlorraine@gmail.com", 
+            "date_joined": "2010-03-17 10:15:27"
+        }
+    },
+    {
+        "pk": 3, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "madonna",
+            "first_name": "Madonna", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2010-03-17 10:15:27", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$9f34c$e37f1d9bf4e4970c89401438c14eda6fc8b5f30d", 
+            "email": "cequi.chlorraine@gmail.com", 
+            "date_joined": "2010-03-17 10:15:27"
+        }
+    },
+    
+    
+    {
+        "pk": 1, 
+        "model": "core.userprofile", 
+        "fields": {
+            "user" : 1,
+            "bio" : "Initial admin account"            
+        }
+    },
+    {
+        "pk": 2, 
+        "model": "core.userprofile", 
+        "fields": {
+            "user" : 2,
+            "bio" : "Dead singer"
+        }
+    },
+    {
+        "pk": 3, 
+        "model": "core.userprofile", 
+        "fields": {
+            "user" : 3,
+            "bio" : "Not yet dead singer",
+            "following": [2]
+        }
+    }
+    
+]
